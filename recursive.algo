@@ -1,0 +1,19 @@
+FUNCTION power(x,n :INTEGER) : INTEGER  BEGIN
+IF (n=1) THEN
+RETURN x;
+ELSE 
+RETURN x* power(x,n-1);
+END_IF
+END
+
+FUNCTION isPalindrome(str: STRING; left, right: INTEGER): BOOLEAN;
+VAR
+    res: BOOLEAN;
+BEGIN
+    IF (str[left] != str[right]) THEN
+        RETURN FALSE
+    ELSE IF (left < right) THEN
+        RETURN isPalindrome(str, left + 1, right - 1);
+    END_IF;
+    RETURN TRUE;
+END;
